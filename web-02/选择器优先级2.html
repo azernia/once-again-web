@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div3{
+				height: 100px;
+				background: red;
+			}
+			/*10+100=110*/
+			.box2 #div3{
+				height: 100px;
+				background: green;
+			}
+			/*100+10=110*/
+			#div1 .box3{
+				height: 100px;
+				background: yellow;
+			}
+			/*100+10=110*/
+			#div2 .box3{
+				height: 100px;
+				background: blue;
+			}
+			/*100+1+1=102*/
+			#div1 div div{
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			优先级			代码执行的顺序
+				选择器的优先级一至的情况下，谁在后谁的优先级就高
+				选择器的优先级不一至的情况下，会选择优先级高的
+				
+				行间样式>id选择器>类选择器>标签选择器>通配符选择器（*）
+				
+				
+				包含选择器的优先级是一种累加的关系，加起来的值越大优先级就越高，值越小优先级就低
+				行间样式			1000
+				id选择器			100
+				类选择器			10
+				标签选择器		1
+				
+		-->
+		<div class="box1" id="div1">
+			<div class="box2" id="div2">
+				<div class="box3" id="div3"></div>
+			</div>
+		</div>
+	</body>
+</html>
