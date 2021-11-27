@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>背景颜色</title>
+		<style type="text/css">
+			/* 
+				background: 背景
+				background-color: 背景色
+				background-image: 背景图片
+				background-repeat: 背景图片是否重复
+				background-position: 背景图片位置
+				background-attachment: 背景图片是否滚动
+					scroll （默认） 跟随滚动条滚动
+					fixed 不跟随滚动条滚动
+			 */
+			div {
+				width: 300px;
+				height: 300px;
+				border: 10px solid black;
+				margin-top: 10px;
+			}
+			#div1 {
+				background-color: green;
+			}
+			#div2 {
+				height: 1000px;
+				background-image: url(images/img.jpg);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+			#div3 {
+				
+			}
+			#div5 {
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			在不设定容器宽高的情况下内容会将容器的宽高撑开
+			背景不会占用容器的宽高
+		 -->
+		<div id="div1">
+			这是一段文字
+			<img src="images/img.jpg" >
+		</div>
+		<div id="div2">
+			
+		</div>
+		<div id="div3">
+			
+		</div>
+		<div id="div4">
+			
+		</div>
+		<div id="div5">
+			
+		</div>
+	</body>
+</html>

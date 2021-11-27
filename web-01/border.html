@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>边框</title>
+		<style type="text/css">
+		/* 
+			边框
+			边框的组成：
+				1. 边框的粗细 1px
+				2. 边框的样式 solid（实线）dashed（虚线）dotted(点划线/不同浏览器效果不同)
+				3. 边框的颜色
+		 */
+			div {
+				width: 300px;
+				height: 300px;
+				margin-top: 10px;
+			}
+			#div1 {
+				border: 20px solid red; /* 符合样式 */
+			}
+			#div2 {
+				border: 20px dashed #FF0000;
+			}
+			#div3 {
+				border: 20px dotted rgb(255, 0, 0);
+			}
+			#div4 {
+				border: 20px dotted rgba(255, 0, 0, 0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			实线
+		</div>
+		<div id="div2">
+			虚线
+		</div>
+		<div id="div3">
+			点划线
+		</div>
+		<div id="div4">
+			透明度
+		</div>
+	</body>
+</html>
