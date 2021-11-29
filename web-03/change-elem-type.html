@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素类型转换</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: green;
+            color: #fff;
+            display: inline; /* 转换为行内元素 */
+        }
+        span {
+            background: red;
+            width: 100px;
+            height: 100px;
+            display: block; /* 转换为块级元素 */
+        }
+    </style>
+</head>
+<body>
+    <!--
+			块元素转行内元素			display:inline
+				转换后块元素就具有了行内元素的特征（只是显示为行内元素，本身还是块元素）
+			
+			行内元素转块元素			display:block
+				转换后行内元素就具有了块元素的特征（只是显示为块元素，本身还是行内元素）
+    -->
+    <div>div1</div>
+    <div>div2</div>
+
+    <span>span1</span>
+    <span>span2</span>
+</body>
+</html>

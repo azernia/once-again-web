@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			标签嵌套规则
+				1、行内标签不能嵌套块标签，块标签可以嵌套行内标签
+				2、a标签不能再嵌套a标签
+				3、h1-h6,dt这些标签的性质是标题，那里面就不能嵌套块级标签（可以嵌套行内标签）
+				4、p标签不能嵌套块标签（可以嵌套行内标签）
+				5、ul和li，以及ol与li，以及dl和dt、dd他们是固定的嵌套规则
+					1）ul和ol下边只能跟li，li的父级只能是ul或者ol
+					2）li中可以嵌套任何标签，甚至可以再放一个ul或者ol
+					3）dl和dt、dd可以参考ul和li
+				
+		-->
+		<!--<span style="border: 1px solid #f00;"><div>123</div></span>
+		<a href="http://www.baidu.com/">百<a href="http://www.apeclass.com/">海棠</a>度</a>
+		<h1>这里<ul><li>123</li><li>456</li></ul>是一个大<span style="color: #f00;">标题</span></h1>
+		<p>这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一段文字这里是一<div>美梦成真 顶起</div>段文字这里是一段文字</p>-->
+		<ul>
+			<li>
+				<h2>这里是标题1</h2>
+				<ul>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+				</ul>
+			</li>
+			<li>
+				<h2>这里是标题2</h2>
+				<ul>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+				</ul>
+			</li>
+			<li>
+				<h2>这里是标题3</h2>
+				<ul>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+					<li>这是第一个列表</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

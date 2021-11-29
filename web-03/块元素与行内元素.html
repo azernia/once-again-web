@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<title></title>
+		<style>
+			body *{
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			标签嵌套规则
+				1、行内标签不能嵌套块标签，块标签可以嵌套行内标签
+				2、a标签不能再嵌套a标签
+				3、h1-h6,dt这些标签的性质是标题，那里面就不能嵌套块级标签（可以嵌套行内标签）
+				4、p标签不能嵌套块标签（可以嵌套行内标签）
+				5、ul和li，以及ol与li，以及dl和dt、dd他们是固定的嵌套规则
+					1）ul和ol下边只能跟li，li的父级只能是ul或者ol
+					2）li中可以嵌套任何标签，甚至可以再放一个ul或者ol
+					3）dl和dt、dd可以参考ul和li
+				
+		-->
+		<!--
+			块元素
+				div,h1-h6,p,ul,li,ol,dl,dt,dd,header,nav,footer,section,article,aside
+				
+			行内元素
+				a,span,strong,em,mark,img,time
+		-->
+		<div>div</div>
+		<a href="#">a</a>
+		<span>span</span>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<h6>h6</h6>
+		<p>p</p>
+		<strong>strong</strong>
+		<em>em</em>
+		<ul>
+			<li>ul>li</li>
+		</ul>
+		<ol>
+			<li>ol>li</li>
+		</ol>
+		<dl>
+			<dt>dt</dt>
+			<dd>dd</dd>
+		</dl>
+		<mark>mark</mark>
+		<img src="../web-02/img/1.jpg"/>
+		<header>header</header>
+		<nav	>nav	</nav>
+		<footer>footer</footer>
+		<section>section</section>
+		<article>article</article>
+		<aside>aside</aside>
+		<time>time</time>
+	</body>
+</html>

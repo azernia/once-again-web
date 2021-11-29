@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内元素</title>
+    <style>
+        /* 清空间距 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            background: pink;
+            width: 200px;   /* 未生效 */
+            height: 200px;  /* 未生效 */
+            margin: 50px; 
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        注意: body 有 8px 的间距
+        行内元素的特征:
+            1. 没有宽高，宽高都为 auto，显示的宽高为内容撑开的
+            2. 不支持设置宽高
+            3. 不支持上下的 margin 与 padding
+            4. 上下 padding 将背景撑开只是表面现象 不会对其他元素有影响
+            5. 行内元素会在一行显示（能放下的前提下）
+            6. 代码换行会被解析为空格 解决方案：放到一行即可
+     -->
+     <span>HELLO</span>
+     <strong>WORLD</strong> <!-- 代码换行 空格 -->
+</body>
+</html>

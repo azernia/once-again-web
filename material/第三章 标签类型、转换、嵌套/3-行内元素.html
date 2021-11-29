@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			span{
+				background: pink;
+				width: 200px;
+				height: 200px;
+				/*margin: 50px;*/
+				padding: 50px;
+			}
+			div{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			行内元素的特征
+				1、内容撑开宽高
+					宽高的值都是auto，只不过显出来的宽高是由内容撑开的
+				2、不支持设置宽高
+				3、不支持上下的margin与上下padding(左右支持)
+					上下的padding是有问题，虽然把背影撑出来了，这个只是表面现象，它不会对其它的元素有影响
+				4、所有的行内元素都会在一行显示
+				5、代码换行会被解析成一个空格
+		-->
+		<span>海棠学院</span>
+		<strong>kaivon</strong>
+		<div>div</div>
+	</body>
+</html>
