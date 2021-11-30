@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 200px auto;
+				transition: 1s;
+			}
+			div:hover{
+				transform: skew(45deg);
+				transform: skewX(45deg);
+				transform: skewY(45deg);
+				transform: skew(30deg,30deg);
+			}
+			
+			span{
+				background: green;
+				transition: 1s;
+			}
+			span:hover{
+				transform: skew(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transform				变换
+				rotate(度数)			旋转
+				
+				skew(度数)			倾斜
+					skewX			X轴倾斜
+					skewY			Y轴倾斜
+				
+				
+				只针对块元素有作用
+		-->
+		<div>kaivon</div>
+		<span>kaivon</span>
+	</body>
+</html>

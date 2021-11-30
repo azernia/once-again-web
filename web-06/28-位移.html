@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 200px auto;
+				transition: 1s;
+			}
+			div:hover{
+				transform: translate(100px);
+				transform: translateX(200px);
+				transform: translateY(150px);
+				transform: translate(-100px,-100px);
+			}
+			
+			span{
+				background: green;
+				transition: 1s;
+			}
+			span:hover{
+				transform: translate(-100px,-100px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transform				变换
+				rotate(度数)			旋转
+				
+				skew(度数)			倾斜
+					skewX			X轴倾斜
+					skewY			Y轴倾斜
+				
+				scale(倍数)			缩放
+					scaleX			X轴缩放
+					scaleY			Y轴缩放
+				
+				translate(像素)		位移
+					translateX		X轴位移
+					translateY		Y轴位移
+				
+				只针对块元素有作用
+		-->
+		<div>kaivon</div>
+		<span>kaivon</span>
+	</body>
+</html>

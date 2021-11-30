@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p:nth-last-child(1){
+				background: red;
+			}
+			span:nth-last-child(4){
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			E:nth-last-child(n)
+				E			标签名
+				n			第几个（从1开始的）
+				从E标签的父级中去找(倒着找)第n个标签，并且这个标签必需是E
+		-->
+		<div>
+			<p>red</p>
+			<span>green</span>
+			<p>blue</p>
+			<span>yellow</span>
+			<p>pink</p>
+		</div>
+	</body>
+</html>

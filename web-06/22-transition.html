@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+				transition: 200ms;
+				transition: 1s width;
+				transition: 2s all cubic-bezier(.62,1.06,.67,-0.74);
+			}
+			div:hover{
+				width: 600px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transition			过渡
+				参数1：			过渡的时间,s代表秒，ms代表毫秒,1s=1000ms
+				参数2：			过渡的属性，all代表所有的属性
+				参数3：			过渡的方式，ease是默认的（减速）
+								linear			匀速
+								ease-in			加速
+								ease-out			减速
+								ease-in-out		先加速后减速
+								cubic-bezier		贝塞尔曲线
+								
+								生成贝塞尔曲线http://cubic-bezier.com/
+		-->
+		<div></div>
+	</body>
+</html>

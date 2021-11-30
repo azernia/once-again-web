@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title> 
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			div[class='box']{
+				background: green;
+			}
+			li[color]{
+				background: red;
+			}
+			li[color='blue']{
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box"></div>
+		<ul>
+			<li color='red'>red</li>
+			<li color='green'>green</li>
+			<li color='blue'>blue</li>
+			<li color='yellow'>yellow</li>
+			<li color='pink'>pink</li>
+		</ul>
+	</body>
+</html>

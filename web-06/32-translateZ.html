@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 100px;
+				height: 100px;
+				padding: 100px;
+				border: 5px solid #000;
+				margin: 100px auto;
+				
+				/*把一个盒子转成一个3D空间，需要配合景深来使用*/
+				transform-style: preserve-3d;	
+				perspective: 100px;
+				perspective: 800px;
+			}
+			.child{
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+			}
+			.box:hover .child{
+				transform: translateZ(-400px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="child">kaivon</div>
+		</div>
+	</body>
+</html>

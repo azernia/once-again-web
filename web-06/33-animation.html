@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				animation: 2s move ease-in-out;
+			}
+			
+			@keyframes move{
+				0%{
+					width: 100px;
+				}
+				50%{
+					width: 400px;
+				}
+				100%{
+					width: 600px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			animation			动画
+				参数1：			运动的时间
+				参数2：			关键帧的名字
+				参数3：			过渡的方式，ease是默认的（减速）
+								linear			匀速
+								ease-in			加速
+								ease-out			减速
+								ease-in-out		先加速后减速
+								cubic-bezier		贝塞尔曲线
+								
+								生成贝塞尔曲线http://cubic-bezier.com/
+		-->
+		<div></div>
+	</body>
+</html>

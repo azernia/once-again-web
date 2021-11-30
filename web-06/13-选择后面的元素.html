@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul~p{
+				background: red;
+			}
+			ul~span{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			E~F			找到E标签后面的所有F标签
+		-->
+		<div>
+			<ul>
+				<li><span>red</span></li>
+				<li>	<p>pink</p></li>
+			</ul>
+			<p>green</p>
+			<span>blue</span>
+			<p>black</p>
+			<span>yellow</span>
+		</div>
+	</body>
+</html>

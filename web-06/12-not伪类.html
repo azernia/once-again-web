@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p:not(#green){
+				background: red; 
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			E:not(s)				排除掉某一个元素
+				E				标签
+				s				要排除掉的那个标签的class或者id
+		-->
+		<div>
+			<p>red</p>
+			<p id="green">green</p>
+			<p>blue</p>
+		</div>
+	</body>
+</html>

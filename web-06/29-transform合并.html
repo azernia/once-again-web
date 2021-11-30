@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+				margin: 100px 0 0 0;
+			}
+			/*div:hover{
+				transform: rotate(360deg) scale(2);
+			}*/
+			body:hover div:nth-child(1){
+				transform: translate(100px) scale(2);
+			}
+			body:hover div:nth-child(2){
+				transform: scale(2) translate(100px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transfor执行的顺序是先写的后执行，后写的先执行
+		-->
+		<div>kaivon1</div>
+		<div>kaivon2</div>
+	</body>
+</html>

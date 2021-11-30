@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				
+				-webkit-transition: 1s;		/*Chrom、Safari*/
+				-moz-transition: 1s;			/*Firefox*/
+				-ms-transition: 1s;			/*IE*/
+				-o-transition: 1s;			/*Opera*/
+				transition: 1s;				/*标准*/
+			}
+			div:hover{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			http://caniuse.com/
+		-->
+		<div></div>
+	</body>
+</html>

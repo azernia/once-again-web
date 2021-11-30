@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+				transition: 200ms;
+				transition: 1s width;
+				transition: 1s all;
+			}
+			div:hover{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transition			过渡
+				参数1：			过渡的时间,s代表秒，ms代表毫秒,1s=1000ms
+				参数2：			过渡的属性，all代表所有的属性
+		-->
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{
+				width: 200px;
+				border: 1px solid #f00;
+			}
+			p:first-line{
+				color: #f00;
+				font: 20px/50px "微软雅黑";
+			}
+			p:first-letter{
+				font-size: 50px;
+				color: green;
+			}
+			p::selection{
+				background: green;
+				color: #fff;
+			}
+			p:before{
+				content: 'kaivon';
+				display: block;
+				border: 5px solid #000;
+			}
+			p:after{
+				content: 'kaivon';
+				display: block;
+				color: #000;
+				border: 5px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			E:first-line			E标签里第一行文字的状态
+			E:first-letter		E标签里第一个文字的状态
+			E::selection			E标签里文字被选中的状态（双冒号是CSS3里的固定伪类语法）
+			E:before				在E标签的最前面添加内容
+			E:after				在E标签的最后面添加内容
+		-->
+		<p>
+			这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈这里一段方佣兵的2烟消云散提哩仍佣兵佣兵枯厈
+		</p>
+	</body>
+</html>

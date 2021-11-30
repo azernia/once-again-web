@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			.box{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #000;
+				position: relative;
+			}
+			.box div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+				animation: 3s move linear infinite normal;
+			}
+			
+			@keyframes move{
+				0%{
+					left: 0;
+					top: 0;
+				}
+				25%{
+					left: 300px;
+					top: 0;
+				}
+				50%{
+					left: 300px;
+					top: 300px;
+				}
+				75%{
+					left: 0;
+					top: 300px;
+				}
+				100%{
+					left: 0;
+					top: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			animation			动画
+				参数1：			运动的时间
+				参数2：			关键帧的名字
+				参数3：			过渡的方式，ease是默认的（减速）
+								linear			匀速
+								ease-in			加速
+								ease-out			减速
+								ease-in-out		先加速后减速
+								cubic-bezier		贝塞尔曲线
+								
+								生成贝塞尔曲线http://cubic-bezier.com/
+				参数4：			重复的次数
+								数字
+								infinite		无限次
+				参数5：			动画的顺序
+								alternate		偶数次数会倒着走
+								normal			正常顺序
+		-->
+		<div class="box">
+			<div></div>
+		</div>
+	</body>
+</html>

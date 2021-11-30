@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 200px auto;
+				transition: 1s;
+				
+				transform-origin: left center;
+				transform-origin: right bottom;
+				transform-origin: 20px 30px;
+				transform-origin: left bottom;
+			}
+			body:hover div{
+				transform: rotate(360deg);
+				transform: scale(2);
+				transform: skew(45deg);
+				transform: translate(200px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			transform-origin			变换的基点
+		-->
+		<div>kaivon</div>
+	</body>
+</html>
