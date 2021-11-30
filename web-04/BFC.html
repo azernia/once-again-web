@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC</title>
+</head>
+<body>
+    <!--
+        Block Formatting Contexts				块级元素格式化上下文
+            它决定了块级元素如何对它的内容进行布局，以及与其它元素的关系和相互作用
+            
+            块级元素：父级（是一个块元素）
+            内容：子元素（是一个块元素）
+            其它元素：与内容同级别的兄弟元素
+            相互作用：BFC里的元素与外面的元素不会发生影响
+
+        触发BFC的方式（以下任意一条就可以）
+            1、float的值不为none
+            2、overflow的值不为visible
+            3、display的值为table-cell、table-caption和inline-block之一
+            4、position的值不为static或者releative中任何一个
+        
+        
+        普通文档流的布局规则
+            1、浮动的元素是不会被父级计算高度
+            2、非浮动元素会覆盖浮动元素的位置
+            3、margin会传递给父级
+            4、两个相邻的元素上下margin会重叠
+            
+        BFC的布局规则
+            1、浮动的元素会被父级计算高度(父级触发了BFC)
+            2、非浮动元素不会覆盖浮动元素的位置（非浮动元素触发了BFC）
+            3、margin不会传递给父级（父级触发了BFC）
+            4、两个相邻的元素上下margin不会重叠（给其中一个元素添加一个单独的父级，然后让他的父级触发了BFC）
+    -->
+    <div style="border: 1px solid #f00; display: inline-block;">
+        <div style="width: 100px; height: 100px; background: green; float: left;"></div>
+    </div>
+    
+    <div style="border: 1px solid #f00; margin-top: 100px;">
+        <div style="width: 100px; height: 100px; background: green; float: left;">kaivon1</div>
+        <div style="width: 100px; height: 100px; background: red; overflow: hidden;">kaivon2</div>
+    </div>
+    
+    <div style="background: blue; margin-top: 100px; overflow: hidden;">
+        <div style="width: 100px; height: 100px; background: green; margin-top: 100px;">kaivon1</div>
+        <div style="width: 100px; height: 100px; background: red;">kaivon2</div>
+    </div>
+    
+    <div style="margin-top: 100px;">
+        <div style="width: 100px; height: 100px; background: green; margin: 100px 0;">kaivon1</div>
+        <div style="overflow: hidden;">
+            <div style="width: 100px; height: 100px; background: red; margin: 100px 0;">kaivon2</div>
+        </div>
+    </div>
+</body>
+</html>

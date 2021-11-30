@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .parent{
+            width: 100px;
+            height: 100px;
+            border: 5px solid #f00;
+            overflow: visible;
+            overflow: auto;
+            overflow: hidden;
+            overflow: scroll;
+        }
+        .parent div{
+            /*width: 200px;
+            height: 200px;*/
+            width: 50px;
+            height: 50px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        overflow				针对超出父级的内容如何显示
+            visible			默认值，超出的内容会显示出来
+            auto				如果内容超出了父级，那就出现滚动条。如果内容没有超出，就没有滚动条
+            hidden			超出的内容隐藏掉
+            scroll			不管内容有没有超出，都会出现滚动条
+    -->
+    <div class="parent">
+        <div></div>
+    </div>
+</body>
+</html>

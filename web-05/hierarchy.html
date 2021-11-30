@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层级</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: #fff;
+            position: relative;
+        }
+        .div1{
+            z-index: 2;
+        }
+        .div2{
+            width: 150px;
+            background: green;
+            margin-top: -50px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        在正常情况下，层级的大小由顺序决定，后面的元素要比前面的元素的层级要高
+        有定位元素的层级要比没有定位元素层级要高
+        在都有定位的情况下，层级还是取决于书写顺序
+        
+        z-index				层级
+            它的值是一个数字，数字越大层级越高（在同一个层里）
+    -->   
+    <div class="div1">kaivon1</div>
+    <div class="div2">kaivon2</div> 
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<title><绝对定位/title>
+		<style>
+			body{
+				/*margin: 0;*/
+				position: relative;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				color: #fff;
+			}
+			.div1{
+				background: red;
+			}
+			.div2{
+				background: green;
+				position: absolute;
+				left: 200px;
+				top: 400px;
+			}
+			.div3{
+				background: blue;
+				position: absolute;
+				top: 400px;
+			}
+			span{
+				background: #ccc;
+				color: #fff;
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+            absolute			绝对定位
+            移动的方向
+                top、right、bottom、left
+            特点
+                1、完全脱离文档流
+                2、行内元素支持所有样式（与加上浮动或者inline-block以后的效果是一样的）
+                3、如果父级有定位，那位置会根据父级移动。如果父级没有定位，那位置根据可视区（可以看到的页面范围）移动
+                    (一般情况下，要用到绝对定位的时候，都会给父级来一个相对定位)
+                4、提升层级
+                5、触发BFC
+		-->
+		<div class="div1">div1</div>
+		<div class="div2">div2</div>
+		<div class="div3">div3</div>
+		<span>span</span>
+	</body>
+</html>

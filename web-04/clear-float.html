@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        #div1 {
+            float: left;
+        }
+        #div2 {
+            clear: left;
+        }
+        .parent{
+				border: 1px solid #f00;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: green;
+            float: left;
+            color: #fff;
+        }
+        .box:after {
+            content: '伪类的内容';
+        }
+</style>
+</head>
+<body>
+    <!-- 
+        清除浮动的方法
+        1、clear
+            left			元素的左边不能有浮动的元素
+            right		    元素的右边不能有浮动的元素
+            both			元素的两都不能有浮动的元素
+        2、给父级添加高度
+            有的时候是不能给父级添加高度的，所以这个方法就用不了（父级没有高度的情况下）
+        3、inline-block
+            具有与上一个清除浮动一样的问题，同时加了以后这个元素就没有办法居中了
+        4、overflow:hidden;
+            如果子级有定位的话，并且这个定位超出了父级的范围，那样的话就看不到了，所以不能加这个命令
+        5、空标签
+            空标签是没有内容，但是它的作用是用来清除浮动的，所以不符合行为（JS）、样式（CSS）、结构（HTML）相分离的标准
+            ie6下标签是有一个最小高度19px，解决后也会有2像素的偏差
+        6、br清除浮动
+            与上面的问题是一样
+        7、after伪类清除浮动（现在最主流的方法）
+        after		代表选择到的元素的内容的最后面
+            after伪类的内容默认是一个行内元素
+            content		设置的内容
+     -->
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div class="parent">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

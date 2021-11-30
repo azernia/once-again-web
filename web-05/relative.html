@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title>相对定位</title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				color: #fff;
+			}
+			.div1{
+				background: red;
+			}
+			.div2{
+				background: green;
+				/*margin: 200px 0 0 200px;*/
+				position: relative;
+				left: 200px;
+				top: 200px;
+			}
+			.div3{
+				background: blue;
+			}
+			span{
+				background: red;
+				color: #fff;
+				position: relative;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			position				定位
+				relative			相对定位
+				移动的方向
+					top、right、bottom、left
+				特点
+					1、只加相对定位，不设置元素移动的位置，元素和之前是没有变化
+					2、根据自己原来的位置计算移动的位置
+					3、不脱离文档流，元素移走以后，原来的位置还会被保留
+					4、加上相对定位后对原来的元素本身的特征没有影响
+					5、提升层级
+		-->
+		<div class="div1">div1</div>
+		<div class="div1">div1</div>
+		<div class="div2">div2</div>
+		<div class="div3">div3</div>
+		<span>span</span>
+	</body>
+</html>
