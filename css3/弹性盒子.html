@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒子</title>
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            width: 400px;
+            height: 250px;
+            background-color: lightgrey;
+        }
+        
+        .flex-item {
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        CSS3 弹性盒子内容
+        弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。
+        弹性容器通过设置 display 属性的值为 flex 或 inline-flex将其定义为弹性容器。
+        弹性容器内包含了一个或多个弹性子元素。
+     -->
+    <div class="flex-container">
+        <div class="flex-item">flex item 1</div>
+        <div class="flex-item">flex item 2</div>
+        <div class="flex-item">flex item 3</div> 
+    </div>
+</body>
+</html>
