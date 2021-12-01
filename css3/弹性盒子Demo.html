@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒子Demo</title>
+    <style>
+        div {
+            float: left;
+        }
+        .flexContainer {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .flexItems {
+            width: 100px;
+            height: 100px;
+            /* border: 1px solid green; */
+            background-color: greenyellow;
+        }
+        .container1 {
+            flex-wrap: nowrap;
+        }
+        .container2 {
+            flex-wrap: wrap;
+        }
+        .container3 {
+            flex: wrap;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。
+        wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行
+        wrap-reverse -反转 wrap 排列。
+     -->
+     <h1>flex-wrap</h1>
+    <div class="flexContainer container1">
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+    </div>
+    <div class="flexContainer container2">
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+    </div>
+    <!-- 
+        stretch - 默认。各行将会伸展以占用剩余的空间。
+        flex-start - 各行向弹性盒容器的起始位置堆叠。
+        flex-end - 各行向弹性盒容器的结束位置堆叠。
+        center -各行向弹性盒容器的中间位置堆叠。
+        space-between -各行在弹性盒容器中平均分布。
+        space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。
+     -->
+    <div class="flexContainer container3">
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+        <div class="flexItems"></div>
+    </div>
+</body>
+</html>
