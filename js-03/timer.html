@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+    <script>
+        /*
+             * 定时器的分类
+			 * 	1、重复执行定时器
+			 * 		setInterval()
+			 * 		作用
+			 * 			每隔一段时间就会去执行指定的函数，重复的执行
+			 * 
+			 * 		语法
+			 * 			setInterval(function(){
+			 * 				每隔一段时间就会执行这里的代码
+			 * 			},时间)
+			 * 		参数
+			 * 			1、要执行的函数：当时间到了就会执行
+			 * 				注意：如果函数是在外面定义的，这里面调用的话只能写函数的名字，不能加括号
+			 * 			2、时间：间隔的时间
+			 * 				单位是毫秒
+			 * 				1s=1000ms
+			 * 		什么时候用
+			 * 			当城要每隔一段时间就去做同一件事的时候，就用setInterval
+			 * 
+			 * 
+			 * 	2、延迟执行定时器
+			 * 		setTimeout()
+			 * 		作用
+			 * 			当延迟时间到达后，会执行指定的函数，这个函数只执行一次
+			 * 		语法
+			 * 			setTimeou(function(){
+			 * 				当时间到达后，会执行这里的代码
+			 * 			},时间);
+			 * 		参数
+			 * 			1、要执行的函数：当时间到达后会执行这个函数
+			 * 				注意：如果函数是写在外面的，在这里调用的时候只用写函数的名字，不能加括号
+			 * 			2、时间：延迟时间
+			 * 				时间单位也是毫秒
+			 * 				1s=1000ms
+			 * 		什么时候用
+			 * 			当需要延迟一段时间后去做一件事情，就用setTimeout
+             * * 定时器里的this指向
+			 * 	定时器里的this是指向window的，因为定时器是window身上的一个方法，所以this指向window
+         */
+    </script>
+</body>
+</html>

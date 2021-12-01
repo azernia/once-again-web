@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期</title>
+</head>
+<body>
+    <script>
+        /*
+        * 日期对象
+        * 	js中的一个内置方法，用于处理日期与时间相关的操作
+        * 
+        * 创建日期对象
+        * 	new Date()
+        * 		创建一个跟日期有关系的对象
+        * 
+        * 	new Date()里可以接收参数
+        * 		1、没有参数
+        * 			它是以本机的时间做为参考，创建一个日期对象
+        * 		2、new Date(年,月,日,时,分,秒)
+        * 			参数是数字，每个参数用逗号隔开
+        * 			注意：参数是可以省略，省略的部分默认为0，队了日期（默认为1）
+        * 		3、new Date('June 10,2013 12:12:12')
+        * 			参数是字符串，外国人常用的日期表示方式
+        * 		4、new Date(时间戳)
+        * 			参数为是时间戳
+        * 			时间戳：从1970年1月1日0时0分0秒到指定一个时间点之间的毫秒数
+        * 					new Date().getTime()
+        * 
+        * 	注意：你拿到的date对象只是本机的时间，修改的是date对象的日期，而不是本机的日期
+        * 			本机的日期只能获取不能修改
+        * 获取日期对象的一些方法
+        * 	日期对象.getFullYear()			获取年
+        * 	日期对象.getMonth()				获取月，月份是从0开始的
+        * 	日期对象.getDate()				获取日
+        * 	日期对象.getDay()				获取星期，从0开始，0代表周日
+        * 	日期对象.getHours()				获取小时
+        * 	日期对象.getMinutes()			获取分钟
+        * 	日期对象.getSeconds()			获取秒钟
+        * 	日期对象.getMilliseconds()		获取毫秒
+        * 	日期对象.getTime()				获取1970-01-01 00:00:00到目前日期对象的时间差（单位:毫秒）
+        * 	1s=1000ms
+        * 日期对旬不仅可以获取，还可以对它进行设置，修改的是日期对象的值
+        * 
+        * 设置日期的方法
+        * 	日期对象.setFullYear()			设置年
+        * 	日期对象.setMonth()				设置月(月份从0开始计算)
+        * 	日期对象.setDate()     	    	    设置日
+        * 	日期对象.setHours()   	        设置小时
+        * 	日期对象.setMinutes()  	    		设置分钟
+        * 	日期对象.setSeconds()  	    		设置秒钟
+        * 	日期对象.setMilliseconds()  	    	设置毫秒
+        * 	日期对象.setTime()				设置时间戳
+        * 
+        * 	注意：设置日期里面没有设置星期，因为设置了年月日以后就知道了那天是星期几
+        */
+        let d1=new Date();
+        console.log(d1);
+        //Mon Jul 25 2021 01:16:03 GMT+0800 (CST)
+        //星期	月份	日期	年份	时：分：秒	格林尼治时间	东八区	中国标准时间
+        
+        let d2=new Date(2021,10,29,15,40,32);
+        console.log(d2);
+        //Tue Nov 29 2021 15:40:32 GMT+0800 (CST)
+        
+        let d3=new Date('June 10,2013 12:12:12');
+        console.log(d3);
+        //Mon Jun 10 2013 12:12:12 GMT+0800 (CST)
+        
+        
+        let d4=new Date(new Date().getTime());
+        console.log(d4);		//Mon Jul 25 2021 01:29:29 GMT+0800 (CST)
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+</head>
+<body>
+    <script>
+        let str = 'hello, world';
+        console.log(str.length, '字符串长度'); // 字符串长度，最后有 \0
+        console.log(str.charAt(0), '通过索引获取');
+        /**
+         * indexOf
+            * 	作用
+            * 		通过字符找下标（从左往右找这个字符首次出现的位置）
+            * 	语法
+            * 		字符串.indexOf(searchValue,fromIndex)
+            * 	参数
+            * 		searchValue		要查找的字符
+            * 		fromIndex		从哪个位置开始查找，这个参数如果没有默认为0
+            * 	返回值
+            * 		返回一个数字，这个数字代表字符在整个字符串里的真实下标，如果没找到的话就返回-1
+         */
+        console.log(str.indexOf(','), '通过字符找下标');
+        console.log(str.lastIndexOf(','), '该字符最后出现的位置');
+        // 分割字符串
+        console.log(str);
+        let splitStr = str.split(',');  // 分割后变为数组
+        console.log(splitStr);
+        for(let index in splitStr) {
+            console.log(splitStr[index]);
+        }
+        // 截取字符串
+        let substringStr = str.substring(0, 5);
+        console.log(str);
+        console.log(substringStr);
+        
+    </script>
+</body>
+</html>
