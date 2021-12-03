@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建对象</title>
+</head>
+<body>
+    <script>
+        /* 
+        * 创建对象的方法
+        * 	1、{}			字面量创建对象
+        * 	2、new Object()	
+        * 
+        * 创建完的对象有两个特点
+        * 	1、添加属性
+        * 		描述对象的特征
+        * 		属性的值为非函数的任意数据类型
+        * 	2、添加方法
+        * 		实现对象的一些功能
+        * 		方法的值为函数
+        */
+       // 第一种创建对象的方法
+       let person = {
+            name: '张三',
+            age: 30,
+            // 定义方法
+            introduce: function() {
+                console.log('aaaa');
+            }
+       }
+       console.log(person);
+       person.introduce();
+       // 第二种创建对象的方法
+       let car = new Object();
+       car.carName = '宝马';
+       car.carColor = 'black';
+       car.carPirce = 123.123;
+       console.log(car);
+       car.showMessage = function(carName) {
+           console.log('car is ' + carName);
+       }
+       car.showMessage();
+    </script>
+</body>
+</html>
