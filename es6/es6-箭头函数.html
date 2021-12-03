@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        function fn1() {
+            console.log('fn1');
+        }
+        fn1();
+        // 使用箭头函数 () 表示参数 没有参数时使用
+        let show = () => console.log('show');
+        show();
+        // 有参数时不需要使用()
+        let value = a =>{
+            console.log(a);
+        }
+        value(123);
+        // 多参数
+        let multiParams = (a,b) => {
+            console.log(a,b)
+        }
+        multiParams(123,321);
+        // 箭头函数的 this 指向定义函数时所在的对象
+        // 在函数内部，this的值取决于函数被调用的方式。 obj.xxx()
+    </script>
+</body>
+</html>
