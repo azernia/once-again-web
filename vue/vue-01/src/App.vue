@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bb msg="aa999" @eventName="eventName" ref="bb"></bb>
+    <div @click="asd">2222</div>
+    <div v-for="(item,index) in arr " :key="index">
+       <span>{{item.a}}</span>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import bb from './components/HelloWorld'
 export default {
   name: 'App',
+  data(){
+    return  {
+     arr:[{a:1,b:"ccc"},{a:2,b:"ddd"}]
+    }
+  },
+  methods:{
+    asd(){
+      var a = this.$refs['bb'];
+      console.log(a.asd)
+    },
+    eventName(e){
+       console.log("11111",e)
+     }
+  },
   components: {
-    HelloWorld
+    bb
   }
 }
 </script>
