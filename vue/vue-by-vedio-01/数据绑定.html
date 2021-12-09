@@ -32,9 +32,9 @@
         <input type="text" name="two" id="two" v-model:value="tow"/>
     </div>
     <div>
-        <span>{{tow}}</span>
+        <span>{{three}}</span>
         <label>双向数据绑定-简写</label>
-        <input type="text" name="two" v-model="tow"/>
+        <input type="text" name="two" v-model="three"/>
     </div>
     <!-- 如下代码是错误的，因为v-model只能应用在表单类元素（输入类元素）上 -->
     <!-- <h2 v-model:x="name">你好啊</h2> -->
@@ -49,7 +49,8 @@
         el: '#root',
         data: {
             one: 'RUI',
-            tow: 'RUI-2'
+            tow: 'RUI-2',
+            three: 'RUI-3'
         }
     });
 
