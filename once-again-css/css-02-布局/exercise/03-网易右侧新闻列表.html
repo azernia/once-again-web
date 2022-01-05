@@ -1,47 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网易右侧新闻列表</title>
+    <link rel="stylesheet" href="css/reset.css">
     <style>
-        .container {
-            margin: 0 auto;
+        body {
+            background-color: #bfa;
+        }
+        a {
+            text-decoration: none;
+        }
+        .news-wrapper {
             width: 300px;
-            border: 1px solid black;
+            height: 357px;
+            margin: 50px auto;
+            background-color: #fff;
+            /* 设置上边块 */
+            border-top: 1px solid #ddd;
         }
-        .head {
-            font-size: 16px;
+        .news-title {
+             /* 为了边框和文字宽度一致，需要将h2转换为行内块元素 */
+            display: inline-block;
+            height: 30px;
+            border-top: 1px solid red;
+            margin-top: -1px;
+            padding-top: 10px;
+        }
+        .news-title a {
+            color: #404068;
             font-weight: bold;
-            margin-left: 5px;
         }
-        .imgContainer {
+        .news-img {
+            height: 150px;
+        }
+        .news-img .img-title {
+            margin-top: -30px;
+            color: #fff;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+        .news-list {
             margin-top: 20px;
-            margin-left: 5px;
-            margin-right: 5px;
+            padding-left: 14px;
         }
+        .news-list li::before {
+            content: '■';
+        }
+        .news-list li {
+            margin-bottom: 17px;
+        }
+        .news-list li span {
+            font-size: 14px;
+            color: #666;
+        }
+        .news-list li span:hover {
+            color: red;
+        }
+
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <hr/>
-        <div class="head">
-            <span>体育</span>
+    <div class="news-wrapper">
+        <h2 class="news-title">
+            <a href="#">体育</a>
+        </h2>
+        <div class="news-img">
+            <a href="#">
+                <img src="images/03/1.jpeg" alt="">
+                <!-- 图片标题 -->
+                <h3 class="img-title">
+                    费德勒首负迪米 扶额摇头不满发挥
+                </h3>
+            </a>
         </div>
-        <div class="imgContainer">
-            <img src="images/03/1.jpeg" alt="" style="width: 290px;"/>
-            <span>费德勒首负迪米 扶额摇头不满发挥</span>
-        </div>
-        <div class="newsList">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+        <div class="news-list">
+            <ul class="ul-list">
+                <li>
+                    <a href="#">
+                        <span class="word">
+                            乔治:我爱LA喜欢和LBJ一起打球
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="word">
+                            格林:3年前降薪就在等KD特质T恤嘲讽LBJ
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="word">
+                            塔克4000双鞋让保罗羡慕嫉妒乔丹被震惊
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="word">
+                            CBA下季新赛制:常规4组循环增至46轮
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
-        <hr/>
     </div>
+
 </body>
+
 </html>
