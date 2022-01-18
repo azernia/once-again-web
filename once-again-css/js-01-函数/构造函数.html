@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+<body>
+    
+    <script>
+        function Demo() {
+            this.id = 123;
+            this.name = '123';
+        }
+
+        function Demo2(id, name) {
+            this.id = id;
+            this.name = name;
+            this.sayName = sayNameFun;
+        }
+
+        function sayNameFun() {
+            console.log(this.name, 'Demo2');
+        }
+        /*
+            new Demo(); 构造函数
+            Demo(); 普通函数
+            构造函数执行流程
+            1. 立刻创建一个新的对象
+            2. 将新的对象设置为函数中的 this
+            3. 逐行执行函数中的代码
+            4. 将新建的对象返回
+        */
+        let demo = new Demo();
+        let demo2 = new Demo2(1, '123');
+        console.log(demo);
+    </script>
+</body>
+</html>
