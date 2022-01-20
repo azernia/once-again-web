@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 方法 API</title>
+</head>
+<body>
+    <script>
+        // 返回一个 Promise 对象
+        let p1 = Promise.resolve();
+        // 如果传入的参数不是 Promise 对象，则返回结果为成功的 Promise 对象
+        // 如果传入的参数是 Promise 对象，则参数执行的结果决定了 resolve 的结果
+        let p2 = Promise.reject();
+        p2.catch(error => {
+            console.log(error);
+        });
+        /*
+            传入 n 个 Promise 数组
+            返回一个新的 Promise 对象
+            所有 Promise 成功才算成功
+            第一个失败了就直接失败
+        */
+        let p3 = Promise.all([p1, p2]);
+        p3.catch(error => {
+            console.log(error);
+        });
+        /*
+            传入 n 个 Promise 数组
+            返回一个新的 Promise 对象
+            第一个完成的 Promise 就是最终的值
+            第一个失败了就直接失败
+        */
+       let p4 = Promise.race([p1, p2]);
+    </script>
+</body>
+</html>
