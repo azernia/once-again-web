@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios 其他使用</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">其他使用</h2>
+        <button class="btn btn-primary">发送 GET 请求</button>
+        <button class="btn btn-warning">发送 POST 请求</button>
+        <button class="btn btn-success">发送 PUT 请求</button>
+        <button class="btn btn-danger">发送 DELETE 请求</button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll('button');
+
+        // GET
+        btns[0].onclick = async function() {
+            let resp = await axios.request({
+                method: 'GET',
+                url: 'http://localhost:3000/comments'
+            });
+            console.log(resp);
+        }
+
+        // POST
+        btns[1].onclick = async function() {
+            let sendObj = {
+                body: "some comment",
+                postId: 2
+            };
+            let resp = await axios.post(
+                'http://localhost:3000/comments',
+                sendObj
+            );
+            console.log(resp);
+        }
+
+        // 其他类似
+    </script>
+</body>
+</html>

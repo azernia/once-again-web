@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios 创建实例对象</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">创建实例对象</h2>
+        <button class="btn btn-primary">GET</button>
+        <button class="btn btn-warning">POST</button>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('button');
+
+        // 创建实例对象
+        const message = axios.create({
+            baseURL: 'https://api.apiopen.top',
+            timeout: 2000,
+        });
+
+        // message 与 axios 对象的功能几乎一样
+        message({
+            url: '/getJoke'
+        }).then(resp => {
+            console.log(resp);
+        });
+    </script>
+</body>
+</html>
