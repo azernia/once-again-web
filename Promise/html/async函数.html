@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async 函数</title>
+</head>
+<body>
+    <script>
+        // 与 then 相同
+        async function main() {
+            // 返回值非 Promise 则返回成功的 Promise 对象
+            // return 123;
+            // 如果为 Promise 对象则为返回的 Promise 对象
+            // 如果抛出异常则为失败的 Promise 对象
+        }
+
+        let result = main();
+
+        console.log(result);
+    </script>
+</body>
+</html>
