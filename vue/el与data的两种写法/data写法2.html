@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data 写法二</title>
+    <script src="../vue-js/dev/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>Hello {{name}}</h1>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '#root',
+            // data 的第一种写法 对象式
+            // data: {
+            //     name: 'rui'
+            // }
+            /*
+                函数式 组件时必用
+                当为普通函数时
+                    this 为 Vue 实例对象
+                当为箭头函数时(箭头函数没有自己的 this，所以往外找)
+                    this 为全局 Window 对象
+             */
+            // data: function() {
+            //     // this 为 Vue 实例对象
+            //     console.log(this);
+            //     return {
+            //         name: 'rui'
+            //     }
+            // }
+            data() {
+                return {
+                    name: 'rui'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
