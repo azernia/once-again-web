@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例-methods语法实现</title>
+    <script src="../vue-js/dev/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <label>姓:</label>
+            <input type="text" v-model="firstName">
+        </div>
+        <div>
+            <label>名:</label>
+            <input type="text" v-model="lastName">
+        </div>
+        <div>
+            <label>全名:</label>
+            <!--
+                不带小括号显示函数名
+                带小括号显示函数的返回值
+             -->
+            <span>{{fullName()}}</span>
+        </div>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            },
+            methods: {
+                fullName() {
+                    return this.firstName + '-' + this.lastName;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

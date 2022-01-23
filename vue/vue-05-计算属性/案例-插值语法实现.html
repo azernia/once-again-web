@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值语法</title>
+    <script src="../vue-js/dev/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <label>姓:</label>
+            <input type="text" v-model="firstName">
+        </div>
+        <div>
+            <label>名:</label>
+            <input type="text" v-model="lastName">
+        </div>
+        <div>
+            <label>全名:</label>
+            <!-- slice(0,3) 截取 -->
+            <span>{{firstName.slice(0,3)}}-{{lastName}}</span>
+        </div>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            }
+        });
+    </script>
+</body>
+</html>
