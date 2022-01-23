@@ -35,14 +35,14 @@
 				fullName:'张-三'
 			},
 			watch:{
-				firstName(val){
+				firstName(newValue){
 					setTimeout(()=>{
 						console.log(this)
-						this.fullName = val + '-' + this.lastName
+						this.fullName = newValue + '-' + this.lastName
 					},1000);
 				},
-				lastName(val){
-					this.fullName = this.firstName + '-' + val
+				lastName(newValue){
+					this.fullName = this.firstName + '-' + newValue
 				}
 			}
 		})
