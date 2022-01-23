@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表的过滤</title>
+    <script src="../vue-js/dev/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" placeholder="请输入姓名" v-model="keyword"/>
+        <ul>
+            <li v-for="person in result" :key="person.id">
+                {{person.id}}--{{person.name}}--{{person.age}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                keyword: '',
+                persons: [
+                    {id: 1, name: 'a', age: 20},
+                    {id: 2, name: 'b', age: 30},
+                    {id: 3, name: 'c', age: 40},
+                ],
+            },
+            // 使用 computed 实现
+            computed: {
+                result() {
+                    return this.persons.filter((person)=>{
+                        return person.name.indexOf(this.keyword) !== -1;
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>

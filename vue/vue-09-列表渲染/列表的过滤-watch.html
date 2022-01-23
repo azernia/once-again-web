@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表的过滤</title>
+    <script src="../vue-js/dev/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input type="text" placeholder="请输入姓名" v-model="keyword"/>
+        <ul>
+            <li v-for="person in result" :key="person.id">
+                {{person.id}}--{{person.name}}--{{person.age}}
+            </li>
+            <!--<li v-if="result.length === 0" v-for="person in persons" :key="person.id">-->
+            <!--    {{person.id}}&#45;&#45;{{person.name}}&#45;&#45;{{person.age}}-->
+            <!--</li>-->
+            <!--<li v-if="result.length > 0" v-for="person in result" :key="person.id">-->
+            <!--    {{person.id}}&#45;&#45;{{person.name}}&#45;&#45;{{person.age}}-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '#root',
+            data: {
+                keyword: '',
+                persons: [
+                    {id: 1, name: 'a', age: 20},
+                    {id: 2, name: 'b', age: 30},
+                    {id: 3, name: 'c', age: 40},
+                ],
+                result: []
+            },
+            // 使用 watch 实现
+            watch: {
+                // keyword: {
+                //     handler(value) {
+                //         this.result = this.persons.filter((person)=>{
+                //             return person.name.indexOf(value) !== -1;
+                //         })
+                //     }
+                // }
+                keyword(value) {
+                    this.result = this.persons.filter((person)=>{
+                        return person.name.indexOf(value) !== -1;
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>
