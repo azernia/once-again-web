@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1 v-text="msg" ref="title"></h1>
+    <button @click="showDOM">输出上方的 DOM 元素</button>
+    <School ref="sch"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import School from "@/components/School";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    School
+  },
+  data() {
+    return {
+      msg: '欢迎学习 Vue'
+    }
+  },
+  methods: {
+    showDOM() {
+      // 获取 DOM 元素
+      console.log(this.$refs.title);
+      // 获取组件对象的实例对象
+      console.log(this.$refs.sch);
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
