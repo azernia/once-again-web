@@ -1,31 +1,20 @@
 <template>
   <div>
-    <h1 v-text="msg" ref="title"></h1>
-    <button @click="showDOM">输出上方的 DOM 元素</button>
-    <School ref="sch"/>
+    <!--
+        :age
+          传递的值为 "" 中的表达式的值
+    -->
+    <Student name="123" :age="321" sex="male"/>
   </div>
 </template>
 
 <script>
-import School from "@/components/School";
+import Student from "@/components/Student";
 
 export default {
   name: "App",
   components: {
-    School
-  },
-  data() {
-    return {
-      msg: '欢迎学习 Vue'
-    }
-  },
-  methods: {
-    showDOM() {
-      // 获取 DOM 元素
-      console.log(this.$refs.title);
-      // 获取组件对象的实例对象
-      console.log(this.$refs.sch);
-    }
+    Student
   }
 }
 </script>
