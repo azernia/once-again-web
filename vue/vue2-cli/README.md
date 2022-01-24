@@ -1,5 +1,13 @@
 # 笔记
 
+查看 webpack 版本 制定安装版本
+```bash
+   # webpack 需要查看的插件
+   npm view webpack versions
+   # less-loader 插件名 @7 版本号
+   npm install less-loader@7
+```
+
 ## 脚手架文件结构
 
 	├── node_modules 
