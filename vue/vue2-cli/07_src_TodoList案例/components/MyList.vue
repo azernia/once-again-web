@@ -3,7 +3,13 @@
     <!-- 方式一 -->
     <!--<MyItem v-for="todo in todos" :key="todo.id" :title="todo.title" :completed="todo.completed"/>-->
     <!-- 方式二 -->
-    <MyItem v-for="todo in todos" :key="todo.id" :todo="todo"/>
+    <MyItem
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        :modifyCompletedStatus="modifyCompletedStatus"
+        :deleteItem="deleteItem"
+    />
   </ul>
 </template>
 
@@ -15,7 +21,7 @@ export default {
   components: {
     MyItem
   },
-  props: ['todos']
+  props: ['todos', 'modifyCompletedStatus', 'deleteItem']
 }
 </script>
 

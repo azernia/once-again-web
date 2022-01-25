@@ -2,10 +2,18 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        // 传递函数
-        <MyHeader :receive="receive"/>
-        <MyList :todos="todos"/>
-        <MyFooter/>
+        <!-- 传递函数 -->
+        <MyHeader :addItem="addItem"/>
+        <MyList
+            :todos="todos"
+            :modifyCompletedStatus="modifyCompletedStatus"
+            :deleteItem="deleteItem"
+        />
+        <MyFooter
+            :todos="todos"
+            :checkAllListener="checkAllListener"
+            :clearAllCompletedItem="clearAllCompletedItem"
+        />
       </div>
     </div>
   </div>
@@ -45,8 +53,47 @@ export default {
     }
   },
   methods: {
-    receive(todoItem) {
+    /**
+     * 添加元素
+     * @param todoItem
+     */
+    addItem(todoItem) {
       this.todos.unshift(todoItem);
+    },
+    /**
+     * 修改元素选中状态
+     * @param id
+     */
+    modifyCompletedStatus(id) {
+      this.todos.forEach(todo => {
+        if(todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+      })
+    },
+    /**
+     * 删除元素
+     * @param id
+     */
+    deleteItem(id) {
+      this.todos = this.todos.filter(todo => {
+        return todo.id !== id;
+      });
+    },
+    /**
+     * 是否全选
+     * @param isChecked
+     */
+    checkAllListener(isChecked) {
+      this.todos.forEach(todo => {
+        todo.completed = isChecked;
+      })
+    },
+    /**
+     * 清空所有已完成
+     */
+    clearAllCompletedItem() {
+      this.todos = this.todos.filter(todo => !todo.completed);
     }
   }
 }

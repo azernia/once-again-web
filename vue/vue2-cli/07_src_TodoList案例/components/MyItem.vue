@@ -1,10 +1,12 @@
 <template>
   <li>
     <label>
-      <input type="checkbox" :checked="todo.completed"/>
+      <input type="checkbox" :checked="todo.completed" @change="handleCheck(todo.id)"/>
+      <!-- 不建议使用 违反原则 修改了 props -->
+      <!--<input type="checkbox" v-model="todo.completed"/>-->
       <span>{{ todo.title }}</span>
     </label>
-    <button class="btn btn-danger" style="display:none">删除</button>
+    <button class="btn btn-danger" @click="handleDelete(todo.id)">删除</button>
   </li>
 </template>
 
@@ -12,7 +14,25 @@
 export default {
   name: "Item",
   // 方式二
-  props: ['todo']
+  props: ['todo', 'modifyCompletedStatus', 'deleteItem'],
+  methods: {
+    /**
+     * 处理选中
+     * @param id
+     */
+    handleCheck(id) {
+      this.modifyCompletedStatus(id);
+    },
+    /**
+     * 处理删除
+     * @param id
+     */
+    handleDelete(id) {
+      if (confirm('确定删除吗？')) {
+        this.deleteItem(id);
+      }
+    }
+  }
   // 方式一
   // props: {
   //   title: String,
@@ -56,6 +76,14 @@ export default {
 
   li:last-child {
     border-bottom: none;
+  }
+
+  li:hover {
+    background-color: #dddddd;
+  }
+
+  li:hover button {
+    display: block;
   }
 
 </style>
