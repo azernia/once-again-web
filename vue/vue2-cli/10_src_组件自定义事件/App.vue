@@ -9,6 +9,7 @@
 		<!-- <Student @atguigu="getStudentName" @demo="m1"/> -->
 
 		<!-- 通过父组件给子组件绑定一个自定义事件实现：子给父传递数据（第二种写法，使用ref） -->
+    <!-- @click.native 原生 DOM 事件-->
 		<Student ref="student" @click.native="show"/>
 	</div>
 </template>
@@ -43,6 +44,14 @@
 		},
 		mounted() {
 			this.$refs.student.$on('atguigu',this.getStudentName) //绑定自定义事件
+      // this.$refs.student.$on('atruigu', function(name,...a) {
+      //  this 为 Student 的 VC
+      //   console.log(this);
+      // })
+      // this.$refs.student.$on('atguigu', (name, ...a) => {
+      //   // this 为 App VC
+      //   console.log(this);
+      // })
 			// this.$refs.student.$once('atguigu',this.getStudentName) //绑定自定义事件（一次性）
 		},
 	}
