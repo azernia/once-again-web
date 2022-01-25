@@ -1,8 +1,8 @@
 <template>
 	<div class="app">
-    <h2>{{msg}}</h2>
-    <School/>
-    <Student/>
+		<h1>{{msg}}</h1>
+		<School/>
+		<Student/>
 	</div>
 </template>
 
@@ -16,7 +16,6 @@
 		data() {
 			return {
 				msg:'你好啊！',
-				studentName:''
 			}
 		}
 	}
