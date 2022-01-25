@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Storage</title>
+</head>
+<body>
+<div>
+    <h2>Session Storage</h2>
+    <button onclick="saveData()">点我保存数据</button>
+    <button onclick="readData()">点我读取数据</button>
+    <button onclick="deleteData()">点我删除数据</button>
+    <button onclick="removeAll()">点我清空数据</button>
+</div>
+
+<script>
+    function saveData() {
+        sessionStorage.setItem('token', '123');
+    }
+    function readData() {
+        // 读不出来的为 null
+        alert(sessionStorage.getItem('token'));
+    }
+    function deleteData() {
+        sessionStorage.removeItem('token');
+    }
+    function removeAll() {
+        sessionStorage.clear();
+    }
+</script>
+</body>
+</html>
