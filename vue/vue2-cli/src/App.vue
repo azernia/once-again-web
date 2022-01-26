@@ -1,19 +1,19 @@
 <template>
-  <Test/>
+  <div class="container">
+    <Search/>
+    <ResultList/>
+  </div>
 </template>
 
 <script>
-
-import Test from "@/components/Test";
+import Search from "@/components/Search";
+import ResultList from "@/components/ResultList";
 
 export default {
   name: "App",
   components: {
-    Test
+    Search,
+    ResultList
   }
 }
 </script>
-
-<style scoped>
-
-</style>
