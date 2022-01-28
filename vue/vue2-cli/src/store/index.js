@@ -25,11 +25,17 @@ const mutations = {
     },
     ADDODD(state, value) {
         state.sum += value;
+    },
+    ADD_PERSON(state, value) {
+        state.persons.push(value);
     }
 }
 
 const state = {
-    sum: 0
+    sum: 0,
+    persons: [
+        {id: '001', name: '123'}
+    ]
 }
 
 export default new Vuex.Store({
