@@ -26,6 +26,7 @@
 				if(this.opacity <= 0) this.opacity = 1
 			},16)
 		}, */
+    // 这两个生命周期钩子为路由独有的
 		activated() {
 			console.log('News组件被激活了')
 			this.timer = setInterval(() => {
