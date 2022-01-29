@@ -3,13 +3,17 @@ import Vue from 'vue'
 //引入App
 import App from './App.vue'
 // 引入 ElementUI
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css'
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css'
+import {Button, Input} from 'element-ui';
 
 //关闭Vue的生产提示
 Vue.config.productionTip = false
 
-Vue.use(ElementUI);
+Vue.component(Button.name, Button);
+Vue.component(Input.name, Input);
+
+// Vue.use(ElementUI);
 
 //创建vm
 new Vue({
