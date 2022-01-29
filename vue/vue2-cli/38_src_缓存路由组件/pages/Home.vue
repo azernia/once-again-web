@@ -14,7 +14,17 @@
 			<!-- <keep-alive :include="['News','Message']"> -->
 				
 			<!-- 缓存一个路由组件 -->
-			<keep-alive include="News">
+      <!--
+        keep-alive
+        使包裹的路由组件不被销毁
+        include 指定被缓存的路由组件 不写则为缓存包裹的所有组件
+        News 组件的名字
+      -->
+			<!--<keep-alive include="News">-->
+			<!--	<router-view></router-view>-->
+			<!--</keep-alive>-->
+      <!-- 缓存多个 -->
+      <keep-alive :include="['News', 'Message']">
 				<router-view></router-view>
 			</keep-alive>
 		</div>
