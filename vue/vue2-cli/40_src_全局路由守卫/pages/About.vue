@@ -13,5 +13,8 @@
 			window.aboutRoute = this.$route
 			window.aboutRouter = this.$router
 		},  */
+		mounted() {
+			console.log('%%%',this.$route)
+		},
 	}
 </script>
