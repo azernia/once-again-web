@@ -9,6 +9,27 @@ import Login from '@/pages/Login'
 import Search from '@/pages/Search'
 import Register from '@/pages/Register'
 
+// 保存原 push 方法
+let originPush = VueRouter.prototype.push;
+// 保存原 replace 方法
+let originReplace = VueRouter.prototype.replace;
+// 重写 push 方法
+VueRouter.prototype.push = function(location, resolve, reject) {
+    if(resolve && reject) {
+        originPush.call(this, location, resolve, reject);
+    } else {
+        originPush.call(this, location, ()=>{}, ()=>{});
+    }
+}
+// 重写 replace 方法
+VueRouter.prototype.replace = function(location, resolve, reject) {
+    if(resolve && reject) {
+        originReplace.call(this, location, resolve, reject);
+    } else {
+        originReplace.call(this, location, ()=>{}, ()=>{});
+    }
+}
+
 export default new VueRouter({
     routes: [
         {
@@ -26,6 +47,7 @@ export default new VueRouter({
             }
         },
         {
+            name: 'search',
             path: '/search',
             component: Search,
             meta: {

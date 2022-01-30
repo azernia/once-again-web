@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    <span>{{$route.query.keywords}}</span>
+  </div>
 </template>
 
 <script>
