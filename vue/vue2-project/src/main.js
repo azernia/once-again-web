@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入路由
 import router from "@/router";
+// 引入 Vuex
+import store from "@/store";
 
 // 测试
 import {reqCategoryList} from "@/api";
@@ -16,5 +18,6 @@ Vue.component(TypeNav.name, TypeNav);
 
 new Vue({
   render: h => h(App),
-  router: router
+  router: router,
+  store
 }).$mount('#app')
