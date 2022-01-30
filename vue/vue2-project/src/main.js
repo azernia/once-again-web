@@ -5,11 +5,7 @@ import router from "@/router";
 // 引入 Vuex
 import store from "@/store";
 
-// 测试
-import {reqCategoryList} from "@/api";
-reqCategoryList();
-
-import TypeNav from "@/pages/Home/TypeNav";
+import TypeNav from "@/components/TypeNav";
 
 Vue.config.productionTip = false
 
