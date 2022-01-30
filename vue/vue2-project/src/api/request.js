@@ -1,5 +1,8 @@
 // axios 二次封装
 import axios from "axios";
+// 引入进度条
+import nprogress from 'nprogress';
+import "nprogress/nprogress.css";
 
 const requests = axios.create({
     baseURL: '/api',
@@ -7,12 +10,15 @@ const requests = axios.create({
 });
 // 请求拦截器
 requests.interceptors.request.use((config) => {
+    // 进度条开始
+    nprogress.start();
     // config 包含 headers
     return config;
 });
 // 响应拦截器
 requests.interceptors.response.use(
     (resp) => {
+        nprogress.done();
         return resp.data;
     },
     (error) => {
@@ -22,4 +28,4 @@ requests.interceptors.response.use(
 );
 
 // 对外暴露
-export default axios;
+export default requests;
