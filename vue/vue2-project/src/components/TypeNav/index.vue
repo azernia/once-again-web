@@ -16,7 +16,7 @@
                   :class="{curr: currentIndex === index}"
               >
                 <h3 @mouseenter="changeIndex(index)">
-                  <a :data-categoryName="c1.categoryName" :data-firstCategoryId="c1.categoryId">{{c1.categoryName}}</a>
+                  <a :data-categoryName="c1.categoryName" :data-category1Id="c1.categoryId">{{c1.categoryName}}</a>
                 </h3>
                 <!-- 二级 三级 分类 -->
                 <div class="item-list clearfix" :style="{display: currentIndex === index? 'block' : 'none'}">
@@ -27,14 +27,14 @@
                   >
                     <dl class="fore">
                       <dt>
-                        <a :data-categoryName="c2.categoryName" :data-secondCategoryId="c2.categoryId">{{c2.categoryName}}</a>
+                        <a :data-categoryName="c2.categoryName" :data-category2Id="c2.categoryId">{{c2.categoryName}}</a>
                       </dt>
                       <dd>
                         <em
                             v-for="c3 in c2.categoryChild"
                             :key="c3.categoryId"
                         >
-                          <a :data-categoryName="c3.categoryName" :data-thirdCategoryId="c3.categoryId">{{c3.categoryName}}</a>
+                          <a :data-categoryName="c3.categoryName" :data-category3Id="c3.categoryId">{{c3.categoryName}}</a>
                         </em>
                       </dd>
                     </dl>
@@ -95,19 +95,19 @@ export default {
     goSearch(event) {
       // 编程式导航 + 事件的委派
       let element = event.target;
-      let {categoryname, firstcategoryid, secondcategoryid, thirdcategoryid} = element.dataset;
+      let {categoryname, category1id, category2id, category3id} = element.dataset;
       if(categoryname) {
         // 路由跳转参数
-        let location = {name: 'search'};
+        let location = {name: 'search', params: this.$route.params};
         let query = {
           categoryName: categoryname
         }
-        if(firstcategoryid) {
-          query.firstCategoryId = firstcategoryid;
-        } else if(secondcategoryid) {
-          query.secondCategoryId = secondcategoryid;
-        } else if(thirdcategoryid) {
-          query.thirdCategoryId = thirdcategoryid;
+        if(category1id) {
+          query.category1Id = category1id;
+        } else if(category2id) {
+          query.category2Id = category2id;
+        } else if(category3id) {
+          query.category3Id = category3id;
         }
         location.query = query;
         // 路由跳转
