@@ -57,7 +57,9 @@
 </template>
 
 <script>
-import {mapState} from "vuex"
+import {mapState} from "vuex";
+// 按需引入
+import {throttle} from "lodash";
 
 export default {
   name: "TypeNav",
@@ -76,9 +78,13 @@ export default {
     })
   },
   methods: {
-    changeIndex(index) {
+    // changeIndex(index) {
+    //   this.currentIndex = index;
+    // },
+    // 节流
+    changeIndex: throttle(function(index) {
       this.currentIndex = index;
-    },
+    }, 50),
     leaveIndex() {
       this.currentIndex = -1;
     }
