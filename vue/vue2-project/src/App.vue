@@ -15,6 +15,11 @@ export default {
   components: {
     Header,
     Footer
+  },
+  // App 的 mounted 只会执行一次
+  mounted() {
+    // 派发 action
+    this.$store.dispatch('categoryList');
   }
 }
 </script>

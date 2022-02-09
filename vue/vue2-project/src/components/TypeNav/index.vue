@@ -2,45 +2,48 @@
   <!-- 商品分类导航 -->
   <div class="type-nav">
     <div class="container">
-      <div @mouseleave="leaveIndex">
+      <div @mouseleave="leaveShow" @mouseenter="enterShow">
         <h2 class="all">全部商品分类</h2>
-        <!-- 三级联动 -->
-        <div class="sort">
-          <div class="all-sort-list2">
-            <div
-                class="item"
-                v-for="(c1, index) in categoryList"
-                :key="c1.categoryId"
-                :class="{curr: currentIndex === index}"
-            >
-              <h3 @mouseenter="changeIndex(index)">
-                <a href="">{{c1.categoryName}}</a>
-              </h3>
-              <!-- 二级 三级 分类 -->
-              <div class="item-list clearfix" :style="{display: currentIndex === index? 'block' : 'none'}">
-                <div
-                    class="subitem"
-                    v-for="c2 in c1.categoryChild"
-                    :key="c2.categoryId"
-                >
-                  <dl class="fore">
-                    <dt>
-                      <a href="">{{c2.categoryName}}</a>
-                    </dt>
-                    <dd>
-                      <em
-                          v-for="c3 in c2.categoryChild"
-                          :key="c3.categoryId"
-                      >
-                        <a href="">{{c3.categoryName}}</a>
-                      </em>
-                    </dd>
-                  </dl>
+        <!-- 过渡动画 -->
+        <transition name="sort">
+          <!-- 三级联动 -->
+          <div class="sort" v-show="isShow">
+            <div class="all-sort-list2" @click="goSearch">
+              <div
+                  class="item"
+                  v-for="(c1, index) in categoryList"
+                  :key="c1.categoryId"
+                  :class="{curr: currentIndex === index}"
+              >
+                <h3 @mouseenter="changeIndex(index)">
+                  <a :data-categoryName="c1.categoryName" :data-firstCategoryId="c1.categoryId">{{c1.categoryName}}</a>
+                </h3>
+                <!-- 二级 三级 分类 -->
+                <div class="item-list clearfix" :style="{display: currentIndex === index? 'block' : 'none'}">
+                  <div
+                      class="subitem"
+                      v-for="c2 in c1.categoryChild"
+                      :key="c2.categoryId"
+                  >
+                    <dl class="fore">
+                      <dt>
+                        <a :data-categoryName="c2.categoryName" :data-secondCategoryId="c2.categoryId">{{c2.categoryName}}</a>
+                      </dt>
+                      <dd>
+                        <em
+                            v-for="c3 in c2.categoryChild"
+                            :key="c3.categoryId"
+                        >
+                          <a :data-categoryName="c3.categoryName" :data-thirdCategoryId="c3.categoryId">{{c3.categoryName}}</a>
+                        </em>
+                      </dd>
+                    </dl>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </transition>
       </div>
       <nav class="nav">
         <a href="#">服装城</a>
@@ -66,11 +69,15 @@ export default {
   data() {
     return {
       // 存储用户鼠标移到那个一级分类
-      currentIndex:  -1
+      currentIndex:  -1,
+      isShow: true
     }
   },
   mounted() {
-    this.$store.dispatch('categoryList');
+    // 如果非 Home 路由组件
+    if(this.$route.path !== '/home') {
+      this.isShow = false;
+    }
   },
   computed: {
     ...mapState({
@@ -78,15 +85,51 @@ export default {
     })
   },
   methods: {
-    // changeIndex(index) {
-    //   this.currentIndex = index;
-    // },
     // 节流
     changeIndex: throttle(function(index) {
       this.currentIndex = index;
     }, 50),
-    leaveIndex() {
+    /**
+     * 路由跳转
+     */
+    goSearch(event) {
+      // 编程式导航 + 事件的委派
+      let element = event.target;
+      let {categoryname, firstcategoryid, secondcategoryid, thirdcategoryid} = element.dataset;
+      if(categoryname) {
+        // 路由跳转参数
+        let location = {name: 'search'};
+        let query = {
+          categoryName: categoryname
+        }
+        if(firstcategoryid) {
+          query.firstCategoryId = firstcategoryid;
+        } else if(secondcategoryid) {
+          query.secondCategoryId = secondcategoryid;
+        } else if(thirdcategoryid) {
+          query.thirdCategoryId = thirdcategoryid;
+        }
+        location.query = query;
+        // 路由跳转
+        this.$router.push(location);
+      }
+    },
+    /**
+     * 鼠标移入显示
+     */
+    enterShow() {
+      if(this.$route.path !== '/home') {
+        this.isShow = true;
+      }
+    },
+    /**
+     * 鼠标移出
+     */
+    leaveShow() {
       this.currentIndex = -1;
+      if(this.$route.path !== '/home') {
+        this.isShow = false;
+      }
     }
   }
 }
@@ -212,6 +255,20 @@ export default {
           background-color: skyblue;
         }
       }
+    }
+
+    // 过渡动画
+    // 进入开始状态
+    .sort-enter {
+      height: 0px;
+    }
+    // 过渡动画的结束状态
+    .sort-enter-to {
+      height: 461px;
+    }
+    // 定义动画时间、速率
+    .sort-enter-active {
+      transition: all .5s linear;
     }
   }
 }

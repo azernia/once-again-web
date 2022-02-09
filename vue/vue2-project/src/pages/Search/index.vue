@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>{{$route.query.keywords}}</span>
+    <TypeNav/>
   </div>
 </template>
 
