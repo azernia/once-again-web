@@ -1,15 +1,21 @@
 // home 仓库
-import {reqCategoryList} from "@/api";
+import {reqCategoryList, reqBannerList} from "@/api";
 
 // Vuex 存储的数据
 const state = {
-    categoryList: []
+    // 分类
+    categoryList: [],
+    // 轮播图
+    bannerList: []
 }
 
 // 修改 state 的唯一手段
 const mutations = {
-    CATEGORYLIST(store, categoryList) {
+    CATEGORY_LIST(store, categoryList) {
         state.categoryList = categoryList;
+    },
+    BANNER_LIST(store, bannerList) {
+        state.bannerList = bannerList;
     }
 }
 
@@ -18,7 +24,13 @@ const actions = {
     async categoryList({commit}) {
         let resp = await reqCategoryList();
         if(resp.code === 200) {
-            commit('CATEGORYLIST', resp.data);
+            commit('CATEGORY_LIST', resp.data);
+        }
+    },
+    async bannerList({commit}) {
+        let resp = await reqBannerList();
+        if(resp.code === 200) {
+            commit('BANNER_LIST', resp.data);
         }
     }
 }

@@ -111,8 +111,18 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-  name: "index"
+  name: "index",
+  mounted() {
+    this.$store.dispatch('bannerList');
+  },
+  computed: {
+    ...mapState({
+      bannerList: (state) => state.home.bannerList
+    })
+  }
 }
 </script>
 

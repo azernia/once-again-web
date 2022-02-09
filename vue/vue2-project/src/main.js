@@ -4,7 +4,8 @@ import App from './App.vue'
 import router from "@/router";
 // 引入 Vuex
 import store from "@/store";
-
+// 引入 mockServe
+import "@/mock/mockServe"
 import TypeNav from "@/components/TypeNav";
 
 Vue.config.productionTip = false
