@@ -165,7 +165,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  // 滚动条距离顶部为 0
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
