@@ -1,11 +1,22 @@
 <template>
   <button @click="isShowTest = !isShowTest">change</button>
-  <Test v-if="isShowTest"/>
+  <Suspense>
+    <!-- 真正展示 -->
+    <template v-slot:default>
+      <Test v-if="isShowTest"/>
+    </template>
+    <!-- 加载不出 -->
+    <template v-slot:fallback>
+      Loading...
+    </template>
+  </Suspense>
 </template>
 
 <script>
-import {ref} from "vue";
-import Test from "@/components/Test";
+import {ref, defineAsyncComponent} from "vue";
+// import Test from "@/components/Test";
+
+const Test = defineAsyncComponent(() => import('./components/Test')); // 异步引入
 
 export default {
   name: 'App',
