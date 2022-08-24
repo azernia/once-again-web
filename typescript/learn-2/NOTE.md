@@ -1,0 +1,2 @@
+- 自动监视单个文件 `tsc filename -w`
+- 配置 tsconfig.json `tsc -w` 监视所有文件
