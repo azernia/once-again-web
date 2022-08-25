@@ -32,7 +32,7 @@ body {
     border: 2px solid black;
     position: relative;
     // 设置蛇的样式
-    .snake {
+    #snake {
       &>div {
         width: 10px;
         height: 10px;
@@ -42,7 +42,7 @@ body {
       }
     }
     // 食物
-    &>.food {
+    &>#food {
       width: 10px;
       height: 10px;
       position: absolute;
@@ -67,4 +67,8 @@ body {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.notice {
+  text-align: center;
 }

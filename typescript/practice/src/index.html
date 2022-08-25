@@ -8,11 +8,11 @@
 <!-- 创建主窗口 -->
 <div class="main">
     <div class="stage">
-        <div class="snake">
+        <div id="snake">
             <div></div>
         </div>
         <!--  食物  -->
-        <div class="food">
+        <div id="food">
             <div></div>
             <div></div>
             <div></div>
@@ -22,13 +22,16 @@
     <!--  积分牌  -->
     <div class="score-panel">
         <div>
-            SCORE: <span class="score">0</span>
+            SCORE: <span id="score"></span>
         </div>
         <div>
-            LEVEL: <span class="level">1</span>
+            LEVEL: <span id="level"></span>
         </div>
     </div>
 </div>
-<script src="./index.ts"></script>
+<div class="notice">
+    点击 A、S、D、W 开始游戏
+</div>
+<!--<script src="./index.ts"></script>-->
 </body>
 </html>
