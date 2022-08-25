@@ -15,8 +15,9 @@ if(typeof e === 'string') {
     b = e;
 }
 
-// 类型断言 
+// 类型断言
 b = e as string;
+c = <boolean>e;
 
 a = 10;
 b = 'hello';
