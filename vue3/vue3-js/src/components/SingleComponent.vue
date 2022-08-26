@@ -16,11 +16,11 @@
 </template>
 
 <script setup>
-import {ref,defineProps,defineEmits} from "vue";
+import { ref, defineProps, defineEmits } from 'vue'
 
-const number = ref(0);
-const props = defineProps(['a']);
-const emit = defineEmits(['modify']);
+const number = ref(0)
+const props = defineProps(['a'])
+const emit = defineEmits(['modify'])
 
 const modifyFn = () => {
   emit('modify', 12)

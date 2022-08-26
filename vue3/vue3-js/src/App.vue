@@ -4,15 +4,14 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref } from 'vue';
 import SingleComponent from './components/SingleComponent.vue';
 
 const a = ref(0);
 
 const modifyA = (value) => {
-  a.value = value
-}
-
+  a.value = value;
+};
 
 </script>
 
