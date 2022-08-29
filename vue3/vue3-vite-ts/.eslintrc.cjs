@@ -22,6 +22,7 @@ module.exports = {
     "keyword-spacing": "warn",
     "key-spacing": "warn",
     "arrow-spacing": "warn",
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "object-curly-spacing": ["error", "always"]
   }
 }
