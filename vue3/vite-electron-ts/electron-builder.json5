@@ -5,12 +5,14 @@
   "appId": "YourAppID",
   "asar": true,
   "directories": {
+    "buildResources": "assets",
     "output": "release/${version}"
   },
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "mac": {
+    "category": "public.app-category.utilities",
     "artifactName": "${productName}_${version}.${ext}",
     "target": [
       "dmg"

@@ -53,9 +53,7 @@ export default defineConfig(({ command, mode }) => {
         renderer: {},
       }),
     ],
-    server: process.env.VSCODE_DEBUG ? {
-      host: pkg.debug.env.VITE_DEV_SERVER_HOST,
-      port: pkg.debug.env.VITE_DEV_SERVER_PORT,
+    server: {
       proxy: {
         '/api': {
           target: env.VITE_APP_BASE_URL,
@@ -63,6 +61,6 @@ export default defineConfig(({ command, mode }) => {
           rewrite: (path) => path.replace(/^\/api/, '')
         }
       }
-    } : undefined,
+    },
   }
 })
