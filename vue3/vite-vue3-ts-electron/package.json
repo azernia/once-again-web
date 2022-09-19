@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
-    "build-only": "vite build",
+    "electron": "electron .",
+    "build-only": "vite build && electron-builder",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
@@ -29,5 +30,24 @@
     "vite": "^3.0.4",
     "vite-plugin-electron": "^0.9.2",
     "vue-tsc": "^0.39.5"
+  },
+  "build": {
+    "productName": "FLD",
+    "copyright": "Copyright © 2022 Rui",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
   }
 }

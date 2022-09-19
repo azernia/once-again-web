@@ -8,3 +8,4 @@ package-lock.json
 /typescript/**/*.js
 /typescript/**/out
 /typescript/**/dist_electron
+/vu3/vite-vue3-ts-electron/dist_electron
